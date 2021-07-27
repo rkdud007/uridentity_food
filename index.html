@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="naver-site-verification" content="a7f4f617812729e5acc6bc566de09653accfdf8d" />
-    <meta name="description" content="오늘의 나의 성격과 맞는 음식 테스트 사이트 | 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해주는 사이트.">
-    <title>음식 성격 테스트</title>
-    <meta property="og:title" content="오늘의 나와 어울리는 음식 테스트">
-    <meta property="og:description" content="오늘의 나의 성격과 맞는 음식 테스트 사이트 | 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해주는 사이트.">
+    <meta name="description" content="음식 MBTI 테스트 | 매번 하는 고민인 '뭐먹지?'. 뭐먹지 테스트를 통해 오늘 뭐먹을지를 간단하게 정해봐요! 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해드려요">
+    <title>뭐먹지 테스트</title>
+    <meta property="og:title" content="뭐먹지 테스트">
+    <meta property="og:description" content="음식 MBTI 테스트 | 매번 하는 고민인 '뭐먹지?'. 뭐먹지 테스트를 통해 오늘 뭐먹을지를 간단하게 정해봐요! 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해드려요">
     <meta property="og:image" content="main.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
@@ -20,7 +20,7 @@
     <meta name="google-site-verification" content="l-jqJtWG0R-7MOBezZBz9EA78CjWyy4DL2PRkUTIQOA" />
 </head>
 <body>
-    <article class='start'><h1>나와 어울리는 음식은?</h1>
+    <article class='start'><h1>뭐먹지 테스트</h1>
             <div>너만을 위한, 맞춤형 메뉴</div></div>
         
         <img class="main-img" src="main.png" alt="">
@@ -29,19 +29,34 @@
             <button type ="submit" id="start" onclick="start()">시작하기</button>
         </div>
     </article>
-    <article class="intro">
-       
-        <div style="display: flex;" class="animate__animated animate__fadeInDown "> 오늘은 뭘 먹을지 고민하던 당신은, <br> 어울리는 음식 테스트를 발견하고 들어왔습니다.</div>
-
-        <div class="intro-txt"  id="txt2"> 우리 같이 어제 하루를 되돌아보면서<br> 당신과 어울리는 음식을 찾아 볼까요? </div>
-    
-        <div class="intro-txt" id="txt3">당신이라면 어떻게 했을지 고민해 보면서 답변해주세요.<br>둘중 더 끌리는 선지를 골라주세요:)</div>
-               
-        <div id = "page" >
-            <div id="page-btn" onclick="classput()">클릭!</div>
-        </div>
-                 
-        <button type ="submit" id="start2" onclick="move()">시작합니다</button>
+    <article class="intro intro1 text-focus-in">
+       <img onclick="intro1()" src="istp.png" alt="">
+    </article>
+    <article class="intro fade-in intro2">
+       <img onclick="intro2()" src="istp.png" alt="">
+    </article>
+    <article class="intro intro4 fade-in">
+        <img src="istp.png" alt="">
+        <button onclick="intro3()">잠자기</button>
+        <button>일어나기</button>
+    </article>
+    <article class="intro intro5 fade-in ">
+        <img onclick="intro4()"src="istp.png" alt="">
+    </article>
+    <article class="intro intro6 fade-in ">
+        <img onclick="intro5()" src="istp.png" alt="">
+    </article>
+    <article class="intro intro7 fade-in ">
+        <img onclick="intro6()" src="istp.png" alt="">
+    </article>
+    <article class="intro intro8 fade-in ">
+        <img onclick="intro7()" src="istp.png" alt="">
+    </article>
+    <article class="intro intro9 fade-in ">
+        <img onclick="intro8()"  src="istp.png" alt="">
+    </article>
+    <article class="intro intro10 fade-in">
+        <img onclick="intro9()" src="istp.png" alt="">
     </article>
     <article class = 'question'>
         <div class="question-wrapper">
@@ -133,34 +148,67 @@
             'ENFP' : {'animal': '화려한 피자' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 화려한 피자입니다.<br> <br> 하고 싶은 게 너무 많은 에너지 넘치는 당신! 사람을 좋아하고 잘 챙겨서 힘든 상황에 있는 사람을 지나치지 못하는 따뜻한 마음을 가졌군요. 다소 충동적으로 일을 벌리는 편이지만 하고싶은 일에 대한 열정은 누구에게도 뒤지지 않아요! 그만큼 잘 질리기도 하지만요... 인생을 다채롭고 재밌게 살아가는 당신은 다양한 재료가 조화를 이루는 피자를 닮았네요! <br> <br>화려한 당신, 오늘은 피자를 먹어보는 것이 어떤가요?','img' : "enfp.png"},
             'ENFJ' : {'animal': '포근한 연어덮밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 포근한 연어덮밥입니다.<br> <br> 언제나 남을 생각하고 예쁘게 말하는 스윗한 당신! 모난 말에 쉽게 상처받지만 사람을 좋아하고 책임감이 강해 무리의 중심에 있는 당신은 종종 리더를 맡기도 합니다. 사랑받는 걸 좋아하는 연어덮밥을 닮았네요! <br> <br>포근한 당신, 오늘은 연어덮밥을 먹어보는 것이 어떤가요?','img' : "enfj.png"},
         }
-        function start(){
-            $('.start').hide();
-            $('.intro').show();
-           $('.intro').attr("style","display:flex");
-    
-        }
         var chance = 0;
-        function classput(){
-            if(chance === 0 ){
-                $('#txt2').addClass('animate__animated');
-                $('#txt2').addClass('animate__fadeInDown');
-                $('#txt2').attr('style','display:flex');
-                chance++;
-              
-            }else{
-                $('#txt3').addClass('animate__animated');
-                $('#txt3').addClass('animate__fadeInDown');
-                $('#txt3').attr('style','display:flex');
-                $('#page').hide();
-                $('#start2').show();
+        console.log(chance)
+        function start(){
+            if(chance ===0){
+                $('.start').hide();
+                $('.intro1').show();
+                $('.intro1').attr("style","display:flex");
+            }else if(chance ===1){
+                $('.start').hide();
+                $('.question').show();
+                $('.question').attr("style","display:flex");
+                next();
             }
             
         }
-        function move() {
-           $('.intro').hide();
-           $('.question').show();
-           $('.question').attr("style","display:flex");
-           next();
+        function intro1(){
+            $('.intro1').hide();
+            $('.intro2').show();
+            $('.intro2').attr("style","display:flex");
+        }
+        function intro2(){
+            $('.intro2').hide();
+            $('.intro4').show();
+            $('.intro4').attr("style","display:flex");
+        }
+        function intro3(){
+            $('.intro4').hide();
+            $('.intro5').show();
+            $('.intro5').attr("style","display:flex");
+        }
+        function intro4(){
+            $('.intro5').hide();
+            $('.intro6').show();
+            $('.intro6').attr("style","display:flex");
+        }
+        function intro5(){
+            $('.intro6').hide();
+            $('.intro7').show();
+            $('.intro7').attr("style","display:flex");
+        }
+        function intro6(){
+            $('.intro7').hide();
+            $('.intro8').show();
+            $('.intro8').attr("style","display:flex");
+        }
+        function intro7(){
+            $('.intro8').hide();
+            $('.intro9').show();
+            $('.intro9').attr("style","display:flex");
+        }
+        function intro8(){
+            $('.intro9').hide();
+            $('.intro10').show();
+            $('.intro10').attr("style","display:flex");
+        }
+        function intro9(){
+            chance ++;
+            $('.intro10').hide();
+            $('.start').addClass('puff-in-center');
+            $('.start').show();
+           
         }
         $('#A').click(function(){
             var type = $('#type').val();
