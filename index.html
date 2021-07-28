@@ -13,50 +13,104 @@
     <meta property="og:description" content="음식 MBTI 테스트 | 매번 하는 고민인 '뭐먹지?'. 뭐먹지 테스트를 통해 오늘 뭐먹을지를 간단하게 정해봐요! 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해드려요">
     <meta property="og:image" content="main.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+/>  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <meta name="google-site-verification" content="l-jqJtWG0R-7MOBezZBz9EA78CjWyy4DL2PRkUTIQOA" />
 </head>
 <body>
-    <article class='start'><h1>뭐먹지 테스트</h1>
-            <div>너만을 위한, 맞춤형 메뉴</div></div>
+    <audio id='audio_play' src='main.mp3'></audio> 
+    
+    <!-- ConveyThis button: -->
+    <div id="conveythis-wrapper-main"><a href="https://www.conveythis.com" class="conveythis-no-translate notranslate" title="ConveyThis" >ConveyThis</a></div>
+    <script src="//s2.conveythis.com/javascriptClassic/1/conveythis.js"></script>
+    <script src="//s2.conveythis.com/javascriptClassic/1/translate.js"></script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(e) {
+    conveythis.init({source_language_id: 747, languages: [{"id":"747","active":true},{"id":"703","active":false},{"id":"719","active":false},{"id":"777","active":false},{"id":"736","active":false},{"id":"727","active":false},{"id":"740","active":false},{"id":"742","active":false},{"id":"713","active":false},{"id":"771","active":false},{"id":"768","active":false},{"id":"739","active":false}]})
+    });
+    </script>
+    <!-- End ConveyThis button code. -->
+    
+    <article class='start'>
+        <h1>뭐먹지 테스트</h1>
         
-        <img class="main-img" src="main.png" alt="">
+            <div>너만을 위한, 맞춤형 메뉴</div>
+            
+        
+        <img loading="lazy" class="main-img" src="main.png" alt="">
   
         <div class="white">
-            <button type ="submit" id="start" onclick="start()">시작하기</button>
+            <div onclick="bgm()" id="bgm">bgm OFF</div>
+            <button type ="submit" id="start" onclick="start_func()">시작하기</button>
         </div>
     </article>
     <article class="intro intro1 text-focus-in">
-       <img onclick="intro1()" src="istp.png" alt="">
+        <div class="intro_info">재생이 완료되면 클릭시 넘어갑니다!</div>
+        <video id="vd1" type="video/mp4" onclick="intro1()" src='동영상1.mp4' autoplay muted></video>
     </article>
     <article class="intro fade-in intro2">
-       <img onclick="intro2()" src="istp.png" alt="">
+       <img loading="lazy" onclick="intro2()" src="이미지1.jpeg" alt="">
+       <div class="caption">당신, 곤하게 잠들어 있군요</div>
+    </article>
+    <article class="intro intro1_1 fade-in">
+        <video id="vd2"type="video/mp4" onclick="intro1_1()" src='동영상2.mp4' autoplay muted></video>
+    </article>
+    <article class="intro fade-in intro2_1">
+       <img loading="lazy" onclick="intro2_1()" src="이미지2.jpeg" alt="">
+       <div class="caption">앗 아침 알람소리에 깨버렸네요</div>
     </article>
     <article class="intro intro4 fade-in">
-        <img src="istp.png" alt="">
-        <button onclick="intro3()">잠자기</button>
-        <button>일어나기</button>
+        <div class="intro_info">당신이 할 행동을 클릭하세요!</div>
+        <div>
+            <video type="video/mp4" src='동영상3.mp4' autoplay muted></video>
+            <div ><a><button onclick="return_main()">잠자기</button></a>
+                <button onclick="intro3()">일어나기</button></div>
+        </div>
+        <div class="caption">알람을 끄고 다시 잘까, 아니면 이제 그만 일어날까?</div>
     </article>
     <article class="intro intro5 fade-in ">
-        <img onclick="intro4()"src="istp.png" alt="">
+        <video id="vd3" type="video/mp4" onclick="intro4()" src='동영상4.mp4' autoplay muted></video>
     </article>
-    <article class="intro intro6 fade-in ">
-        <img onclick="intro5()" src="istp.png" alt="">
+    <article class="intro intro6_1 fade-in">
+        <img loading="lazy" onclick="intro5_1()" src="이미지4.jpeg" alt="">
+        <div class="caption">아 배고파</div>
     </article>
-    <article class="intro intro7 fade-in ">
-        <img onclick="intro6()" src="istp.png" alt="">
+    <article class="intro intro6 fade-in">
+        <img loading="lazy" onclick="intro5()" src="이미지5.jpeg" alt="">
+        <div class="caption">다이어트 해야 되는데</div>
     </article>
-    <article class="intro intro8 fade-in ">
-        <img onclick="intro7()" src="istp.png" alt="">
+    <article class="intro intro7 ">
+        <img loading="lazy" onclick="intro6()" src="이미지6.jpeg" alt="">
+        <div class="caption">. . .</div>
+    </article>
+    <article class="intro intro8  ">
+        <img loading="lazy" onclick="intro7()" src="이미지7.jpeg" alt="">
+        <div class="caption">내일부터 해야지</div>
     </article>
     <article class="intro intro9 fade-in ">
-        <img onclick="intro8()"  src="istp.png" alt="">
+        <video id="vd4" src='동영상5.mp4' onclick="intro8()" autoplay muted></video>
     </article>
     <article class="intro intro10 fade-in">
-        <img onclick="intro9()" src="istp.png" alt="">
+        <img loading="lazy" onclick="intro9()" src="이미지8.jpeg" alt="">
+        <div class="caption">뭐먹지</div>
+    </article>
+    <article class="intro intro10_1 fade-in">
+        <img loading="lazy" onclick="intro9_1()" src="이미지9.jpeg" alt="">
+        <div class="caption">일어나자 마자 뭘 먹을지 고민 중이군요</div>
+    </article>
+    <article class="intro intro10_2 fade-in">
+        <img loading="lazy" onclick="intro9_2()" src="이미지10.jpeg" alt="">
+        <div class="caption">. . .</div>
+    </article>
+    <article class="intro intro10_3 fade-in">
+        <img loading="lazy" onclick="intro9_3()" src="이미지11.jpeg" alt="">
+        <div class="caption">뭐먹지 테스트로 정해야겠다!</div>
+    </article>
+    <article class="intro intro9_1 fade-in ">
+        <video id="vd5" src='동6.mp4' onclick="intro8_1()" autoplay muted></video>
+    </article>
     </article>
     <article class = 'question'>
         <div class="question-wrapper">
@@ -77,7 +131,7 @@
     </article>
     <article class="result"> 
         <div class="result-wrapper">
-            <img id="img" src="" art="image">
+            <img loading="lazy" id="img" src="" art="image">
             <h2 id="animal">동물이름</h2>
             <h3 id="explain">설명</h3>
 
@@ -91,13 +145,13 @@
             
         </div>
     </article>
-    <div class="footer">created by. develop | 박가영, design | 이서진, planning | 김소정, 이재아, help | 김동화,심유민, 송채린, 문의 | rkdud007@korea.ac.kr</div>
+    <div class="footer">created by. develop | 박가영, design | 이서진, planning | 김소정, 이재아, help | 김동화,심유민, 송채린, 문의 및 제안 | rkdud007@korea.ac.kr, [BGM] 귀여운 브금 밝은 경쾌한 노래 | No Copyright Music | HYP-ggoomma song(꿈마송)</div>
     <article class="AD"></article>
     <ins class="kakao_ad_area" style="display:none;" 
- data-ad-unit    = "DAN-6Vc7U7fiOTDmCGDQ" 
- data-ad-width   = "320" 
- data-ad-height  = "100"></ins> 
-<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        data-ad-unit    = "DAN-6Vc7U7fiOTDmCGDQ" 
+        data-ad-width   = "320" 
+        data-ad-height  = "100"></ins> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <input type="hidden" id="EI" value="0"> 
     <input type="hidden" id='SN' value="0"> 
     <input type="hidden" id='TF' value="0"> 
@@ -113,6 +167,7 @@
                 requestUrl:'https://uridentity.netlify.app/'
             });
     </script>
+    
     <script>
 
         var num = 1;
@@ -149,8 +204,12 @@
             'ENFJ' : {'animal': '포근한 연어덮밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 포근한 연어덮밥입니다.<br> <br> 언제나 남을 생각하고 예쁘게 말하는 스윗한 당신! 모난 말에 쉽게 상처받지만 사람을 좋아하고 책임감이 강해 무리의 중심에 있는 당신은 종종 리더를 맡기도 합니다. 사랑받는 걸 좋아하는 연어덮밥을 닮았네요! <br> <br>포근한 당신, 오늘은 연어덮밥을 먹어보는 것이 어떤가요?','img' : "enfj.png"},
         }
         var chance = 0;
-        console.log(chance)
-        function start(){
+        function return_main(){
+            $('.intro4').hide();
+            $('.start').addClass('.flicker-in-1');
+            $('.start').show();
+        }
+        function start_func(){
             if(chance ===0){
                 $('.start').hide();
                 $('.intro1').show();
@@ -163,13 +222,48 @@
             }
             
         }
+
+        function bgm(){
+            var audio = document.getElementById('audio_play'); 
+            var bgmbtn = document.getElementById('bgm');
+            if (audio.paused) {
+                bgmbtn.innerHTML = 'bgm ON'; 
+                bgmbtn.style.background = 'white';
+                bgmbtn.style.color = 'black';
+                audio.play(); 
+            }else{ 
+                bgmbtn.innerHTML = 'bgm OFF'; 
+                bgmbtn.style.background = 'black';
+                bgmbtn.style.color = 'white';
+                audio.pause(); 
+                audio.currentTime = 0 
+            } 
+        }
+
         function intro1(){
-            $('.intro1').hide();
-            $('.intro2').show();
-            $('.intro2').attr("style","display:flex");
+            if($('#vd1')[0].currentTime === $('#vd1')[0].duration ){
+                $('#vd1').attr("style","cursor:pointer");
+                $('.intro1').hide();
+                $('.intro2').show();
+                $('.intro2').attr("style","display:flex");
+            }
         }
         function intro2(){
+
             $('.intro2').hide();
+            $('.intro1_1').show();
+            $('.intro1_1').attr("style","display:flex");
+        }
+        function intro1_1(){
+            if($('#vd2')[0].currentTime === $('#vd2')[0].duration ){
+                $('#vd2').attr("style","cursor:pointer");
+            $('.intro1_1').hide();
+            $('.intro2_1').show();
+            $('.intro2_1').attr("style","display:flex");
+            }
+        }
+        function intro2_1(){
+            $('.intro2_1').hide();
             $('.intro4').show();
             $('.intro4').attr("style","display:flex");
         }
@@ -179,7 +273,15 @@
             $('.intro5').attr("style","display:flex");
         }
         function intro4(){
+            if($('#vd3')[0].currentTime === $('#vd3')[0].duration ){
+                $('#vd3').attr("style","cursor:pointer");
             $('.intro5').hide();
+            $('.intro6_1').show();
+            $('.intro6_1').attr("style","display:flex");
+            }
+        }
+        function intro5_1(){
+            $('.intro6_1').hide();
             $('.intro6').show();
             $('.intro6').attr("style","display:flex");
         }
@@ -199,17 +301,50 @@
             $('.intro9').attr("style","display:flex");
         }
         function intro8(){
+            if($('#vd4')[0].currentTime === $('#vd4')[0].duration ){
+                $('#vd4').attr("style","cursor:pointer");
             $('.intro9').hide();
             $('.intro10').show();
             $('.intro10').attr("style","display:flex");
+            }
         }
         function intro9(){
-            chance ++;
             $('.intro10').hide();
-            $('.start').addClass('puff-in-center');
-            $('.start').show();
+            $('.intro10_1').show();
+            $('.intro10_1').attr("style","display:flex");
            
         }
+        function intro9_1(){
+            
+            $('.intro10_1').hide();
+            $('.intro10_2').show();
+            $('.intro10_2').attr("style","display:flex");
+           
+        }
+        function intro9_2(){
+            
+            $('.intro10_2').hide();
+            $('.intro10_3').show();
+            $('.intro10_3').attr("style","display:flex");
+           
+        }
+        function intro9_3(){
+            
+            $('.intro10_3').hide();
+            $('.intro9_1').show();
+            $('.intro9_1').attr("style","display:flex");
+           
+        }
+        function intro8_1(){
+            if($('#vd5')[0].currentTime === $('#vd5')[0].duration ){
+                chance ++;
+                $('.intro9_1').hide();
+                $('#vd5').attr("style","cursor:pointer");
+                $('.start').addClass('puff-in-center');
+                $('.start').show();
+            }
+        }
+        
         $('#A').click(function(){
             var type = $('#type').val();
             var preValue = $('#'+type).val();
@@ -219,6 +354,7 @@
         $('#B').click(function(){
             next();
         })
+
         function next() {
             if(num==13){
                 $(".question").hide();
@@ -232,9 +368,9 @@
                 $('#img').attr('src',result[mbti]['img']);
                 $('#animal').html(result[mbti]['animal']);
                 $('#explain').html(result[mbti]['explain']);
-              
+            }
 
-            } else{
+            else{
                 $('.progress-bar').attr('style',"width:calc(100/12*"+ num +"%)" )
                 $('#title').html(q[num]["title"]);
                 $('#question-box').html(q[num]['question']);
@@ -245,12 +381,9 @@
             }
            
         }
-       
-    
-
     </script>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60fcfc79f7931174"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60fcfc79f7931174">
+        </script>
 
 </body>
 </html>
