@@ -46,70 +46,71 @@
             <button type ="submit" id="start" onclick="start_func()">시작하기</button>
         </div>
     </article>
+   
     <article class="intro intro1 text-focus-in">
-        <div class="intro_info">재생이 완료되면 클릭시 넘어갑니다!</div>
-        <video id="vd1" type="video/mp4" onclick="intro1()" src='동영상1.mp4' autoplay muted></video>
+        <div class="intro_info">클릭시 넘어갑니다!</div>
+        <img id="vd1" onclick="intro1()" src='video1.gif' >
     </article>
     <article class="intro fade-in intro2">
-       <img loading="lazy" onclick="intro2()" src="이미지1.jpeg" alt="">
+       <img onclick="intro2()" src="img1.jpeg" alt="">
        <div class="caption">당신, 곤하게 잠들어 있군요</div>
     </article>
     <article class="intro intro1_1 fade-in">
-        <video id="vd2"type="video/mp4" onclick="intro1_1()" src='동영상2.mp4' autoplay muted></video>
+        <img id="vd2" onclick="intro1_1()" src='video2.gif' >
     </article>
     <article class="intro fade-in intro2_1">
-       <img loading="lazy" onclick="intro2_1()" src="이미지2.jpeg" alt="">
+       <img loading="lazy" onclick="intro2_1()" src="img2.jpeg" alt="">
        <div class="caption">앗 아침 알람소리에 깨버렸네요</div>
     </article>
     <article class="intro intro4 fade-in">
         <div class="intro_info">당신이 할 행동을 클릭하세요!</div>
         <div>
-            <video type="video/mp4" src='동영상3.mp4' autoplay muted></video>
+            <img src='video3.gif' >
             <div ><a><button onclick="return_main()">잠자기</button></a>
                 <button onclick="intro3()">일어나기</button></div>
         </div>
         <div class="caption">알람을 끄고 다시 잘까, 아니면 이제 그만 일어날까?</div>
     </article>
     <article class="intro intro5 fade-in ">
-        <video id="vd3" type="video/mp4" onclick="intro4()" src='동영상4.mp4' autoplay muted></video>
+        <img id="vd3" onclick="intro4()" src='video4.gif' >
     </article>
     <article class="intro intro6_1 fade-in">
-        <img loading="lazy" onclick="intro5_1()" src="이미지4.jpeg" alt="">
+        <img loading="lazy" onclick="intro5_1()" src="img4.jpeg" alt="">
         <div class="caption">아 배고파</div>
     </article>
     <article class="intro intro6 fade-in">
-        <img loading="lazy" onclick="intro5()" src="이미지5.jpeg" alt="">
+        <img loading="lazy" onclick="intro5()" src="img5.jpeg" alt="">
         <div class="caption">다이어트 해야 되는데</div>
     </article>
-    <article class="intro intro7 ">
-        <img loading="lazy" onclick="intro6()" src="이미지6.jpeg" alt="">
+    <article class="intro intro7 fade-in">
+        <img loading="lazy" onclick="intro6()" src="img6.jpeg" alt="">
         <div class="caption">. . .</div>
     </article>
-    <article class="intro intro8  ">
-        <img loading="lazy" onclick="intro7()" src="이미지7.jpeg" alt="">
+    <article class="intro intro8 fade-in ">
+        <img loading="lazy" onclick="intro7()" src="img7.jpeg" alt="">
         <div class="caption">내일부터 해야지</div>
     </article>
     <article class="intro intro9 fade-in ">
-        <video id="vd4" src='동영상5.mp4' onclick="intro8()" autoplay muted></video>
+        <img id="vd4" src='video5.gif' onclick="intro8()" >
     </article>
     <article class="intro intro10 fade-in">
-        <img loading="lazy" onclick="intro9()" src="이미지8.jpeg" alt="">
+        <img loading="lazy" onclick="intro9()" src="img8.jpeg" alt="">
         <div class="caption">뭐먹지</div>
     </article>
     <article class="intro intro10_1 fade-in">
-        <img loading="lazy" onclick="intro9_1()" src="이미지9.jpeg" alt="">
+        <img loading="lazy" onclick="intro9_1()" src="img9.jpeg" alt="">
         <div class="caption">일어나자 마자 뭘 먹을지 고민 중이군요</div>
     </article>
     <article class="intro intro10_2 fade-in">
-        <img loading="lazy" onclick="intro9_2()" src="이미지10.jpeg" alt="">
+        <img loading="lazy" onclick="intro9_2()" src="img10.jpeg" alt="">
         <div class="caption">. . .</div>
     </article>
     <article class="intro intro10_3 fade-in">
-        <img loading="lazy" onclick="intro9_3()" src="이미지11.jpeg" alt="">
+        <img loading="lazy" onclick="intro9_3()" src="img11.jpeg" alt="">
         <div class="caption">뭐먹지 테스트로 정해야겠다!</div>
     </article>
     <article class="intro intro9_1 fade-in ">
-        <video id="vd5" src='동6.mp4' onclick="intro8_1()" autoplay muted></video>
+        <img id="vd5" src='video6.gif' onclick="intro8_1()" >
     </article>
     </article>
     <article class = 'question'>
@@ -169,6 +170,34 @@
     </script>
     
     <script>
+        function preload(imageArray, index) {
+            index = index || 0;
+            if (imageArray && imageArray.length > index) {
+                var img = new Image ();
+                img.onload = function() {
+                    preload(imageArray, index + 1);
+                }
+                img.src = images[index]["serving_url"];
+            }  
+        } 
+
+
+        var images = [
+            { serving_url : "main.png", },
+            { serving_url : "img1.jpeg", },
+            { serving_url : "img2.jpeg", },
+            { serving_url : "img3.jpeg",},
+            { serving_url : "img4.jpeg",},
+            { serving_url : "img5.jpeg",},
+            { serving_url : "img6.jpeg",},
+            { serving_url : "img7.jpeg",},
+            { serving_url : "img8.jpeg",},
+            { serving_url : "img9.jpeg",},
+            { serving_url : "img10.jpeg",},
+            { serving_url : "img11.jpeg",},
+        ];
+        preload(images);
+
 
         var num = 1;
         var q = {
@@ -382,8 +411,7 @@
            
         }
     </script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60fcfc79f7931174">
-        </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60fcfc79f7931174"></script>
 
 </body>
 </html>

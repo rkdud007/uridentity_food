@@ -110,10 +110,10 @@ html,body{
 .intro > div > div > a {
     width: inherit;
 }
-.intro > video {
+.intro > img {
     cursor: pointer;
 }
-.intro4 > div > video {
+.intro4 > div > img {
     cursor: default ;
     max-width: 66%;
     max-height: 100%;
@@ -186,6 +186,7 @@ html,body{
     height: 100vh;
     padding:30px;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -408,4 +409,6 @@ html,body{
     /* flex: 6; */
     height: 77%;
 }
-
+.intro > img {
+    width: 300px;
+}
