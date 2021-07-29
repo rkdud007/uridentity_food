@@ -280,7 +280,6 @@ html,body{
     color: black;
     font-size: 2vh;
     width: -webkit-fill-available;
-    overflow: scroll;
     height: min-content;
 }
 
