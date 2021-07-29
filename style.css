@@ -280,7 +280,6 @@ html,body{
     color: black;
     font-size: 2vh;
     width: -webkit-fill-available;
-    overflow: scroll;
     height: min-content;
 }
 
@@ -290,7 +289,6 @@ html,body{
 
 #B{
     background-color: #feb97e;
-    overflow: scroll;
 }
 #start{
     box-shadow: 1px 5px 0 rgb(0,0,0,0.5);
