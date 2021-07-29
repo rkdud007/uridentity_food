@@ -1,47 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7739647251351292"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="naver-site-verification" content="a7f4f617812729e5acc6bc566de09653accfdf8d" />
-    <meta name="description" content="오늘의 나의 성격과 맞는 음식 테스트 사이트 | 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해주는 사이트.">
-    <title>음식 성격 테스트</title>
-    <meta property="og:title" content="오늘의 나와 어울리는 음식 테스트">
-    <meta property="og:description" content="오늘의 나의 성격과 맞는 음식 테스트 사이트 | 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해주는 사이트.">
-    <meta property="og:image" content="main.png">
+    <meta name="description" content="음식 MBTI 테스트 | 매번 하는 고민인 '뭐먹지?'. 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해드려요">
+    <title>뭐먹지 테스트</title>
+    <meta property="og:title" content="뭐먹지 테스트">
+    <meta property="og:description" content="음식 MBTI 테스트 | 매번 하는 고민인 '뭐먹지?'. 오늘의 나와 가장 잘 어울리는 음식을 MBTI기반으로 추천해드려요">
+    <meta property="og:image" content="https://uridentity.netlify.app/webimg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
+/>  
+<style type="text/css">
+
+    .loading {display:none; position:absolute; top:-4px; left:0; z-index:99; width:100%; height:100%; background:rgba(0, 0, 0, 0.5);}
+
+    .loading strong {display:block; position:relative; top:50%; margin:-75px auto 0 auto; width:200px; height:50px; padding:0 30px;
+
+    border-radius: 10px;
+
+    -webkit-border-radius: 10px;
+
+    -moz-border-radius: 10px;
+
+box-sizing:border-box;
+
+    background:#fff;
+
+    color:#000; font-size:16px; line-height:50px; text-align:center;
+
+    }
+
+</style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <meta name="google-site-verification" content="l-jqJtWG0R-7MOBezZBz9EA78CjWyy4DL2PRkUTIQOA" />
 </head>
 <body>
-    <article class='start'><h1>나와 어울리는 음식은?</h1>
-            <div>너만을 위한, 맞춤형 메뉴</div></div>
+    
+	<div class="loading">
+
+		<strong>Loading.......</strong>
+
+	</div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+		    $('.loading').show();
+
+		});
+
+		 
+
+		$(window).on('load', function() {
+
+		    $('.loading').hide();
+
+		});
+      
+	</script>
+    <audio loop id='audio_play'>
+        <source src='main.mp3' type="audio/mpeg">
+    </audio>
+    
+    <!-- ConveyThis button: -->
+    <div id="conveythis-wrapper-main"><a href="https://www.conveythis.com" class="conveythis-no-translate notranslate" title="ConveyThis" >ConveyThis</a></div>
+    <script src="//s2.conveythis.com/javascriptClassic/1/conveythis.js"></script>
+    <script src="//s2.conveythis.com/javascriptClassic/1/translate.js"></script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(e) {
+    conveythis.init({source_language_id: 747, languages: [{"id":"747","active":true},{"id":"703","active":false},{"id":"719","active":false},{"id":"777","active":false},{"id":"736","active":false},{"id":"727","active":false},{"id":"740","active":false},{"id":"742","active":false},{"id":"713","active":false},{"id":"771","active":false},{"id":"768","active":false},{"id":"739","active":false}]})
+    });
+    </script>
+    <!-- End ConveyThis button code. -->
+    
+    <article class='start'>
+        <h1>뭐먹지 테스트</h1>
         
-        <img class="main-img" src="main.png" alt="">
+            <div>너만을 위한, 맞춤형 메뉴</div>
+            
+        
+        <img loading="lazy" class="main-img" src="main.png" alt="">
   
         <div class="white">
-            <button type ="submit" id="start" onclick="start()">시작하기</button>
+            <div onclick="bgm()" id="bgm">bgm OFF</div>
+            <button type ="submit" id="start" onclick="start_func()">시작하기</button>
         </div>
     </article>
-    <article class="intro">
-       
-        <div style="display: flex;" class="animate__animated animate__fadeInDown "> 오늘은 뭘 먹을지 고민하던 당신은, <br> 어울리는 음식 테스트를 발견하고 들어왔습니다.</div>
-
-        <div class="intro-txt"  id="txt2"> 우리 같이 어제 하루를 되돌아보면서<br> 당신과 어울리는 음식을 찾아 볼까요? </div>
-    
-        <div class="intro-txt" id="txt3">당신이라면 어떻게 했을지 고민해 보면서 답변해주세요.<br>둘중 더 끌리는 선지를 골라주세요:)</div>
-               
-        <div id = "page" >
-            <div id="page-btn" onclick="classput()">클릭!</div>
+   
+    <article class="intro intro1 text-focus-in">
+        <div class="intro_info">클릭시 넘어갑니다!</div>
+        <img id="vd1" onclick="intro1()" src='video1.gif' >
+    </article>
+    <article class="intro fade-in intro2">
+       <img onclick="intro2()" src="img1.jpeg" alt="">
+       <div class="caption">당신, 곤하게 잠들어 있군요</div>
+    </article>
+    <article class="intro intro1_1 fade-in">
+        <img id="vd2" onclick="intro1_1()" src='video2.gif' >
+    </article>
+    <article class="intro fade-in intro2_1">
+       <img loading="lazy" onclick="intro2_1()" src="img2.jpeg" alt="">
+       <div class="caption">앗 아침 알람소리에 깨버렸네요</div>
+    </article>
+    <article class="intro intro4 fade-in">
+        <div class="intro_info">당신이 할 행동을 클릭하세요!
+            <br><br>tip! 계속 잠만자면 밥은 언제...?</div>
         </div>
-                 
-        <button type ="submit" id="start2" onclick="move()">시작합니다</button>
+        
+        <div>
+            <img src='video3.gif' >
+            
+            <div >
+                <a><button onclick="intro3_1()">더 잘래</button></a>
+                <button onclick="intro3()">일어나자</button></div>
+        </div>
+        <div class="caption">알람을 끄고 다시 잘까, 아니면 이제 그만 일어날까?</div>
+    </article>
+    <article class="intro intro4_1 fade-in ">
+        <img id="vd3" onclick="return_main()" src='video7.gif' >
+        <div class="caption">좀 더 자야겠다. .  .</div>
+    </article>
+    <article class="intro intro5 fade-in ">
+        <img id="vd3" onclick="intro4()" src='video4.gif' >
+    </article>
+    <article class="intro intro6_1 fade-in">
+        <img loading="lazy" onclick="intro5_1()" src="img4.jpeg" alt="">
+        <div class="caption">아 배고파</div>
+    </article>
+    <article class="intro intro6 fade-in">
+        <img loading="lazy" onclick="intro5()" src="img5.jpeg" alt="">
+        <div class="caption">다이어트 해야 되는데</div>
+    </article>
+    <article class="intro intro7 fade-in">
+        <img loading="lazy" onclick="intro6()" src="img6.jpeg" alt="">
+        <div class="caption">. . .</div>
+    </article>
+    <article class="intro intro8 fade-in ">
+        <img loading="lazy" onclick="intro7()" src="img7.jpeg" alt="">
+        <div class="caption">내일부터 해야지</div>
+    </article>
+    <article class="intro intro9 fade-in ">
+        <img id="vd4" src='video5.gif' onclick="intro8()" >
+    </article>
+    <article class="intro intro10 fade-in">
+        <img loading="lazy" onclick="intro9()" src="img8.jpeg" alt="">
+        <div class="caption">뭐먹지</div>
+    </article>
+    <article class="intro intro10_1 fade-in">
+        <img loading="lazy" onclick="intro9_1()" src="img9.jpeg" alt="">
+        <div class="caption">일어나자 마자 뭘 먹을지 고민 중이군요</div>
+    </article>
+    <article class="intro intro10_2 fade-in">
+        <img loading="lazy" onclick="intro9_2()" src="img10.jpeg" alt="">
+        <div class="caption">. . .</div>
+    </article>
+    <article class="intro intro10_3 fade-in">
+        <img loading="lazy" onclick="intro9_3()" src="img11.jpeg" alt="">
+        <div class="caption">뭐먹지 테스트로 정해야겠다!</div>
+    </article>
+    <article class="intro intro9_1 fade-in ">
+        <img id="vd5" src='video6.gif' onclick="intro8_1()" >
+    </article>
     </article>
     <article class = 'question'>
         <div class="question-wrapper">
@@ -62,12 +193,13 @@
     </article>
     <article class="result"> 
         <div class="result-wrapper">
-            <img id="img" src="" art="image">
+            <img loading="lazy" id="img" src="" art="image">
             <h2 id="animal">동물이름</h2>
             <h3 id="explain">설명</h3>
-
+            <iframe src="https://coupa.ng/b4mYNO" width="80%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" aria-placeholder="이음식 쿠팡에서 검색!"></iframe>
                     <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <div class="addthis_inline_share_toolbox"></div>
+            
             <div class="info">공유하기를 누르면 결과창이 공유되지 않고 메인페이지가 떠요! <br> 결과 공유는 스크린샷을 이용해 주시면 감사하겠습니다!</div>
             <div id="btnKakao">
                 <button id="kakao-link-btn">카카오톡으로 공유하기</button>
@@ -76,13 +208,19 @@
             
         </div>
     </article>
-    <div class="footer">created by. develop | 박가영, design | 이서진, planning | 김소정, 이재아, help | 김동화,심유민, 송채린, 문의 | rkdud007@korea.ac.kr</div>
+    
+    <div class="footer">created by. develop | 박가영, design | 이서진, planning | 김소정, 이재아, help | 김동화,심유민, 송채린, 김가희 문의 및 제안 | rkdud007@korea.ac.kr, [BGM] 귀여운 브금 밝은 경쾌한 노래 | No Copyright Music | HYP-ggoomma song(꿈마송)</div>
     <article class="AD"></article>
+    <script src="https://ads-partners.coupang.com/g.js"></script>
+    <script>
+        new PartnersCoupang.G({"id":503235,"template":"carousel","trackingCode":"AF9668471","width":"100%","height":"100"});
+    </script>
+
     <ins class="kakao_ad_area" style="display:none;" 
- data-ad-unit    = "DAN-6Vc7U7fiOTDmCGDQ" 
- data-ad-width   = "320" 
- data-ad-height  = "100"></ins> 
-<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        data-ad-unit    = "DAN-6Vc7U7fiOTDmCGDQ" 
+        data-ad-width   = "320" 
+        data-ad-height  = "100"></ins> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <input type="hidden" id="EI" value="0"> 
     <input type="hidden" id='SN' value="0"> 
     <input type="hidden" id='TF' value="0"> 
@@ -98,7 +236,36 @@
                 requestUrl:'https://uridentity.netlify.app/'
             });
     </script>
+    
     <script>
+        function preload(imageArray, index) {
+            index = index || 0;
+            if (imageArray && imageArray.length > index) {
+                var img = new Image ();
+                img.onload = function() {
+                    preload(imageArray, index + 1);
+                }
+                img.src = images[index]["serving_url"];
+            }  
+        } 
+
+
+        var images = [
+            { serving_url : "main.png", },
+            { serving_url : "img1.jpeg", },
+            { serving_url : "img2.jpeg", },
+            { serving_url : "img3.jpeg",},
+            { serving_url : "img4.jpeg",},
+            { serving_url : "img5.jpeg",},
+            { serving_url : "img6.jpeg",},
+            { serving_url : "img7.jpeg",},
+            { serving_url : "img8.jpeg",},
+            { serving_url : "img9.jpeg",},
+            { serving_url : "img10.jpeg",},
+            { serving_url : "img11.jpeg",},
+        ];
+        preload(images);
+
 
         var num = 1;
         var q = {
@@ -109,59 +276,176 @@
             5: {"title": "Q. 05","question":"친구와 함께 식당에서 밥을 기다립니다. 창밖을 바라보는데 마침 길 건너편에 '1등 최다 배출 '이라 써진 로또 가게가 보입니다. 당신은  ", "type":"SN", "A":"로또 당첨이 많이 됐네? 그치만 내가 당첨될 확률은 거의 없으니 다시 핸드폰이나 봐야지", "B":"최다배출? 한번 사볼까? 나 1등되면 어떡하지? 집한채? 차도 뽑고? 부모님한테 1억씩드리고 일단 ..."},
             6: {"title": "Q. 06","question":"밥을 먹으며 친구와 이것저것 이야기를 합니다. 그러다 친구가 '나 지난주에 입원했었다' 고 말했습니다. 당신은", "type":"TF", "A":'"진짜? 어디가 아팠는데? 지금은 안아파?ㅠㅠ " 라고 말한다', "B":'"진짜? 괜찮아? 많이 아팠겠다ㅠㅠ"라고 말한다'},
             7: {"title": "Q. 07","question":"밥을 다 먹고 친구랑 피씨방에 갔습니다. 한판 하더니 친구가 '너는 게임 진짜 대충한다. 근데 왜이렇게 잘하냐.' 라고 말합니다. 이때 당신은.", "type":"TF", "A":"잘한다는 말에 기분이 좋아진다.", "B":"내가 대충했다고? 대충했다는 말에 기분이 나빠진다"},
-            8: {"title": "Q. 08","question":'듀오게임을 하던 도중 말도없이 두시간 동안 친구가 사라졌습니다. 하려던 게임도 못하고 두시간을 날린 당신은 화가 났습니다. 이때 당신의 화가 풀릴 것 같은 말은?', "type":"TF", "A":"미안해. 갑자기 급한 조별과제 미팅이 잡혀서 사라졌었어. 다음에는 미리 말할께.", "B":"미안해. 너한테 말을 말을 하고 나갔어야했는데.. 기분많이 상했겠다.. 다음에는 미리 말할께."},
+            8: {"title": "Q. 08","question":'듀오게임을 하던 도중 말도없이 두시간 동안 친구가 사라졌습니다. 하려던 게임도 못하고 두시간을 날린 당신은 화가 났습니다. 이때 당신의 화가 풀릴 것 같은 말은?', "type":"TF", "A":"미안해. 갑자기 급한 조별과제 미팅이 잡혀서 사라졌었어. 다음에는 미리 말할게.", "B":"미안해. 너한테 말을 말을 하고 나갔어야했는데.. 기분많이 상했겠다.. 다음에는 미리 말할께."},
             9: {"title": "Q. 09", "question":"이번엔 친구랑 술을 먹으러 왔습니다. 자리에 앉고 보니, 건너편 테이블에 완벽한 이상형이 있었습니다. 이때 당신이 처음드는 생각은","type":"SN", "A":"어떻게 하면 그사람을 꼬실지 방법을 고민한다.", "B":"그 사람과 잘돼서 결혼하고 아이까지 낳는 상상으로 이어진다."},
             10: {"title": "Q. 10", "question":"어느덧 10시가 되어 집에 돌아왔습니다. 좀 출출한 당신은 늘 해먹던 요리를 하기위해 냉장고를 열어봅니다. 이때 당신은", "type":"JP", "A":"이 재료면 모자르지는 않을까? 지난번에는 어느정도 필요했었더라?", "B":"대충 어느정도 있어 보이네. 모자라면 사오지 뭐"},
             11: {"title": "Q. 11",  "question":"요리를 하기 직전에, 그 음식을 만들기위해 정해진 재료 하나가 부족하다는 걸 알게 된 당신은","type":"JP", "A":"아 이게 없네.. 바로 산다", "B":"아 이게 없네.. 그냥 빼고 만든다(혹은 다른 걸로 대체한다)"},
             12: {"title": "Q. 12", "question":"요리가 완성되었어요! 완성된 요리를 먹으며 스스로의 요리실력에 감탄하고 있는 당신은", "type":"EI", "A":"와 이거 실화냐? 바로 인스타에 박제하고 이사람 저사람 카톡을 보낸다.", "B":"와 이거 실화냐? 라고 혼자 감탄한다"},
         }
         var result = {
-            'ISTJ' : {'animal': '담담한 콩국수' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 담담한 콩국수입니다.<br> <br> 계획과 원칙에 맞춰 삶을 살아가 약속 시간에는 절대 늦지 않는 당신! 낯가림이 있는 당신을 처음 보는 사람은 차갑다고 생각할 수 있지만 친해지면 장난치는 걸 좋아하는 의외의 면이 있답니다. 책임감이 있고 의젓해서 맏이같다는 말도 자주 듣죠. <br> <br>담담한 당신, 오늘은 콩국수를 먹어보는 것이 어떤가요?','img' : "istj.png"},
-            'ISTP' : {'animal': '시크한 메밀면' , 'explain':'당신과 오늘 가장 잘어울리는 음식은 시크한 메밀면입니다.<br> <br> 과묵하고 작은 일 하나하나에 일희일비하지 않으며 묵묵히 자신의 할일을 해 나가는 당신! 타인에게 큰 관심이 없지만 겉으로는 잘 배려해 주는 당신에게 사람들은 끌리곤하죠. 항상 객관성과 공평함을 유지하려하는 당신은 삶에 있어서 여유를 중요시 여기곤 합니다. <br> <br>시크한 당신, 오늘은 메밀면을 먹어보는 것이 어떤가요?','img' : "istp.png"},
-            'ISFJ' : {'animal': '침착한 국밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 침착한 국밥입니다.<br> <br>  당신은 다른 사람의 감정을 잘 캐치하고 공감도 잘 해주는 군요. 늘상 예의 바르고 성실하게 사는 당신은 내면이 섬세하고 속이 깊은 사람입니다. 뚜렷한 주관과 신념이 존재하고 취향이 확실해서 약간 보수적인 면도 있군요. 어디서나 조용하게 조화롭고 평화로운 환경을 만들기위해 노력하는 당신은  침착한 국밥을 닮았어요! <br> <br> 침착한 당신, 오늘은 국밥을 먹어보는 것이 어떨까요?','img' : "isfj.png"},
-            'ISFP' : {'animal': '다채로운 볶음밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 다채로운 볶음밥입니다. <br> <br> 당신은 공감능력도 좋고 감정이 풍부해 다른사람듸 이야기를 잘 들어주는 군요. 무기력 할 때가 많고 혼자있는 것을 좋아하지만 막상 만나면 잘놀고 친해지면 활발한 당신에게 사람들은 끌린답니다. 관심받는 것은 싫지만 막상 받으면 좋고, 사람 만나는 것은 귀찮지만 막상 만나면 좋은 당신은 다채로운 볶음밥을 닮았어요! <br> <br> 다채로운 당신, 오늘은 볶음밥을 먹어보는 것이 어떤가요?','img' : "isfp.png"},
-            'INTJ' : {'animal': '독립적인 치킨' , 'explain':'당신과 오늘 가장 잘어울리는 음식은 독립적인 치킨입니다. <br> <br>  혼자서 해결하려는 의지가 강한 당신은 본인의 관심분야 외에는 신경쓰지 않는군요! 자칫 무신경하다거나 매정하다고 느낄수도 있지만 좋아하는 분야는 몰입하며 모든것을 객관적으로 판단하려 하고 꼼수를 쓰지 않는 당신의 매력이 보이네요. 본인만의 확고하고 체계적인 기준으로 독립적인 삶을 추구하는 당신은 독립적인 치킨을 닮았어요! <br> <br>  독립적인 당신, 오늘은 치킨을 먹어보는 것이 어떤가요?','img' : "intj.png"},
-            'INTP' : {'animal': '솔직하고 열정적인 봉골레 파스타' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 솔직하고 열정적인 봉골레 파스타입니다.<br> <br> 생각하는 걸 좋아하는 당신! 호기심이 많아 가끔 쓸데없는 것에까지 집착적으로 고민하고 파고들지만 그게 바로 열정적이라는 증거죠. 종종 돌직구를 날리기도 하는 당신은 매사에 매우 솔직한 편이죠. 혼자서 생각의 나래를 펼치고 탐구하는 걸 좋아하는 당신은 짭짤하고 담백한 봉골레 파스타를 닮았네요! <br> <br>솔직하고 열정적인 당신, 오늘은 봉골레 파스타를 먹어보는 건 어떨까요?','img' : "intp.png"},
-            'INFJ' : {'animal': '따끈한 전복죽' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 따끈한 전복죽입니다. <br> <br> 마음이 여리고 몽환적이지만 독립적인 당신! 관계에 대한 선이 뚜렷하고 낯을 가려 첫인상과 다르다는 말을 잘 듣는 편입니다. 계획적인 것을 좋아하지만 즉흥적이고 충동적인 면도 있는 당신은 행동력은 살짝 부족해서 생각에서 그치는 경우가 많아 보이네요! 불의에는 분노하고 약자에게 약한 당신은 따끈한 전복죽을 닮았어요. <br> <br>따스한 마음을 가진 당신, 오늘은 전복죽을 먹어보는 것이 어떨까요?','img' : "infj.png"},
-            'INFP' : {'animal': '온화한 어묵탕 ' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은  온화한 어묵탕 입니다.<br> <br> 낯가림이 있고 속을 잘 비추지 않지만 누구보다 공감과 배려를 잘 해주죠. 이해심이 많고 관대하지만 자신만의 신념은 확고하게 가지고 있습니다.  성취욕에 비해 실행력은 낮지만 상상력이 풍부하며 섬세하고 감성적인 당신의 매력에 사람들은 천천히 빠진답니다.<br> <br> 온화한 당신, 오늘은 어묵탕을 먹어보는 건 어떨까요?','img' : "infp.png"},
-            'ESTJ' : {'animal': '똑부러지는 초밥' , 'explain':'당신과 오늘 가장 잘어울리는 음식은 똑부러지는 초밥입니다. <br> <br>결단력이 뛰어나고 자신감이 넘치는 당신은 목표에 대한 의지가 굳은 사람이죠. 추진력이 있어서 약속을 잡을때 예약담당이 되곤 합니다. 책임감이 강하고 현실적인 마인드를 가지고 있는 당신에게 사람들은 의지하기도 합니다. <br> <br> 똑부러지는 당신, 오늘은 초밥을 먹어보는 것이 어떤가요?','img' : "estj.png"},
-            'ESTP' : {'animal': '쿨한 냉면' , 'explain':'당신과 오늘 가장 잘어울리는 음식은 쿨한 냉면입니다.<br> <br> 적극적이고 열정적인 당신, 항상 지금 현재 이 순간을 즐기는 편이죠. 현실적인 것에 몰두하는 것을 좋아하고 항상 합리성과 효율성을 추구하곤 합니다.  쉽게 질리기도 하지만 위기상황에서 암기응변을 잘 발휘하는 당신이 강점이 빛을 발할 때가 많겠군요! 선입견이 없어서 상대를 편안하게 해주면서 한편으로 스릴있는 모험을 즐기는 뒤끝없는 당신의 모습은 쿨한 냉면을 닮았어요. <br> <br> 쿨한 당신, 오늘은 냉면을 먹어보는 것이 어떤가요?','img' : "estp.png"},
-            'ESFJ' : {'animal': '분위기 메이커 삼겹살' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 분위기 메이커 삼겹살입니다. <br> <br> 본투비 인싸인 당신은 타고난 분위기 메이커 입니다. 새로운 사람 사귀는 것도 좋아하고 노는 것도 정말 좋아합니다. 정이 많아 주변사람들을 잘 챙기지만 관심에 민감하고 쉽게 서운해 지기도 하죠. 밝은 표정으로 따뜻하고 섬세하게 분위기를 주도해 가는 당신은 파티의 꽃인 삼겹살과 닮았군요.<br> <br>  분위기 메이커인 당신, 오늘은 삼겹살을 먹어보는 것이 어떤가요?','img' : "esfj.png"},
-            'ESFP' : {'animal': '명랑한 떡볶이' , 'explain':' 당신과 오늘 가장 잘어울리는 음식은 명랑한 떡볶이입니다.<br> <br> 쾌활하고 붙임성이 좋은 당신은 어디서나 분위기 메이커를 자처합니다. 지시와 명령은 잘 따르고 싶지 않고 마감시간을 지키기가 어려울때도 있지만, 언제나 당신이 가진 여유는 강점이 되죠! 낙관적으로 생각하기에 새로운 시도에 거리낌이 없는 당신의 에너지가 부러워요. <br> <br> 명랑한 당신, 오늘은 떡볶이를 먹어보는 것이 어떤가요? ','img' : "esfp.png"},
-            'ENTJ' : {'animal': '화끈한 짬뽕' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 화끈한 짬뽕입니다.<br> <br>  열정적인 리더가 너무나 잘 어울리는 당신! 직설적이고 솔직한 화법으로 카리스마를 가집니다. 감정적인 공감은 서툴지만 한다면 하는 당신의 마인드는 매력적이죠. 빠르고 효율적인 것을 좋아하고 목적을 향해 화끈하게 달려가는 당신은 화끈한 짬뽕을 닮았군요.<br> <br>  화끈한당신, 오늘은 짬뽕을 먹어보는 것이 어떤가요?','img' : "entj.png"},
-            'ENTP' : {'animal': '얼얼한 마라탕' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 얼얼한 마라탕입니다.<br> <br> 남들과 토론하고 이야기하는 것 자체에서 에너지를 얻는 당신은 언제나 매운맛! 누구에게도 지지 않는 자존심과 승부욕을 가졌죠. 핫한 언변으로 모두를 압도하는 얼얼한 당신은 마라탕을 닮았네요!<br> <br> 얼얼한 당신, 오늘은 마라탕을 먹어보는 것이 어떤가요?','img' : "entp.png"},
-            'ENFP' : {'animal': '화려한 피자' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 화려한 피자입니다.<br> <br> 하고 싶은 게 너무 많은 에너지 넘치는 당신! 사람을 좋아하고 잘 챙겨서 힘든 상황에 있는 사람을 지나치지 못하는 따뜻한 마음을 가졌군요. 다소 충동적으로 일을 벌리는 편이지만 하고싶은 일에 대한 열정은 누구에게도 뒤지지 않아요! 그만큼 잘 질리기도 하지만요... 인생을 다채롭고 재밌게 살아가는 당신은 다양한 재료가 조화를 이루는 피자를 닮았네요! <br> <br>화려한 당신, 오늘은 피자를 먹어보는 것이 어떤가요?','img' : "enfp.png"},
-            'ENFJ' : {'animal': '포근한 연어덮밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 포근한 연어덮밥입니다.<br> <br> 언제나 남을 생각하고 예쁘게 말하는 스윗한 당신! 모난 말에 쉽게 상처받지만 사람을 좋아하고 책임감이 강해 무리의 중심에 있는 당신은 종종 리더를 맡기도 합니다. 사랑받는 걸 좋아하는 연어덮밥을 닮았네요! <br> <br>포근한 당신, 오늘은 연어덮밥을 먹어보는 것이 어떤가요?','img' : "enfj.png"},
-        }
-        function start(){
-            $('.start').hide();
-            $('.intro').show();
-           $('.intro').attr("style","display:flex");
-    
+            'ISTJ' : {'animal': '담담한 콩국수' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 담담한 콩국수입니다. <br><br>계획과 원칙에 맞춰 삶을 살아가 약속 시간에는 절대 늦지 않는 당신! 약속 장소에 가기까지 버스 정류장까지 걸어가는 시간, 버스를 기다리는 시간까지 계산해서 약속 장소에 제일 먼저 나타난답니다. 이러한 당신은 상대방이 약속 장소에 한참 늦게 도착해도 이제는 익숙해져서 아무렇지도 않아요. 하지만 내가 생각해두었던 계획에 차질이 생기면 누구보다 불편해해요. 또한 낯가림이 있는 당신을 처음 보는 사람은 차갑다고 생각할 수 있지만 친해지면 장난치는 걸 좋아하는 의외의 면이 있답니다. 처음에는 무뚝뚝해 보일 수 있지만 이건 나의 찐모습이 아니니 진짜의 나를 알아줬으면 해요. 매사에 책임감이 있고 의젓해서 맏이같다는 말도 자주 듣죠. 이러한 성격 덕분에 주변 사람들은 당신이 곁에 있어 든든해한답니다. <br><br>담담한 당신, 오늘은 콩국수를 먹어보는 것이 어떤가요?','img' : "istj.png"},
+            'ISTP' : {'animal': '시크한 메밀면' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 시크한 메밀면입니다. <br><br> 과묵하고 작은 일 하나하나에 일희일비하지 않으며 묵묵히 자신의 할 일을 해 나가는 당신! 다른 사람들이 발을 동동 구르고 있는 상황 속에서도 나는 아무렇지도 않아요. 이러한 성격 때문에 주변 사람들은 당신에게 심리적으로 의지할 때가 많아요. 성격유형 테스트도 내가 먼저 궁금해서 하는 것이 아닌 누군가가 권유해서 마지못해 해보는 경우가 많아요. 시크도도한 당신은 상대방으로 하여금 호기심을 자극해 은근히 인기가 많아요. 타인에게 큰 관심이 없지만 겉으로는 잘 배려해 주는 당신에게 사람들은 끌리곤하죠. 연애에 있어서는 상대방이 나에게 먼저 관심을 표현하는 경향이 있어요. 평소에는 연애에 큰 관심이 없지만 막상 사랑에 빠지고 나면 달달한 사랑꾼의 면모가 보여요. 또한 항상 객관성과 공평함을 유지하려하는 당신은 삶에 있어서 여유를 중요시 여기곤 합니다. 내가 하고 있는 일에 대한 간섭이나 재촉은 딱 질색이에요.<br><br>반전 매력의 소유자인 시크한 당신, 오늘은 메밀면을 먹어보는 것이 어떤가요?','img' : "istp.png"},
+            'ISFJ' : {'animal': '침착한 국밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 침착한 국밥입니다. <br><br>당신은 다른 사람의 감정을 잘 캐치하고 공감도 잘 해주는 군요. 상대방의 이야기에 감정이입을 잘 하는 당신은 주변 사람들로부터 고민상담이 많이 들어온답니다. 누군가가 부당한 일을 당했다고 한다면 나도 같이 화가 나고, 기쁜 일이 있다고 하면 자신의 일인 것처럼 나도 진심으로 기뻐해요. 드라마나 영화를 볼 때는 내가 마치 필름 속 주인공이 된 것 마냥 나도 모르는 사이에 눈물이 주르륵 흐르고 있을 때가 많답니다. 늘상 예의 바르고 성실하게 사는 당신은 내면이 섬세하고 속이 깊은 사람입니다. 뚜렷한 주관과 신념이 존재하고 취향이 확실해서 약간 보수적인 면도 있군요. 쉽게 흔들리지 않는 성격 덕분에 주변 사람들로부터 신뢰가 두텁답니다. 연애에 있어서도 한 사람에게 한 번 빠지면 푹 빠져들어 다른 사람은 보이지도 않아요. 어디서나 조용하게 조화롭고 평화로운 환경을 만들기위해 노력하는 당신은 침착한 국밥을 닮았어요! <br><br>침착한 당신, 오늘은 국밥을 먹어보는 것이 어떨까요?','img' : "isfj.png"},
+            'ISFP' : {'animal': '다채로운 볶음밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 다채로운 볶음밥입니다.<br><br> 당신은 공감능력도 좋고 감정이 풍부해 다른사람의 이야기를 잘 들어주는 군요. 연애, 진로, 학업성적 등등 여러 고민상담이 폭주하네요. 누군가가 도움을 필요로 할 때 당신은 절대로 무시하고 지나칠 수 없어요. 하지만 막상 당신이 힘들 때는 다른 사람들에게 도움을 요청한다거나 힘든 얘기를 먼저 꺼내는 것이 망설여질 때가 많아요. 가끔은 나를 챙기지 못하고 다른 사람들을 지나치게 챙기는 탓에 지칠 때도 있어요. 무기력 할 때가 많고 혼자있는 것을 좋아하지만 막상 만나면 잘 놀고 친해지면 활발한 당신에게 사람들은 끌린답니다. 집순이 또는 집돌이인 것 같다가도 분위기 메이커로 전환하는 건 순식간! 관심받는 것은 싫지만 막상 받으면 좋고, 사람 만나는 것은 귀찮지만 막상 만나면 좋은 당신은 다채로운 볶음밥을 닮았어요! <br><br>다채로운 당신, 오늘은 볶음밥을 먹어보는 것이 어떤가요?','img' : "isfp.png"},
+            'INTJ' : {'animal': '독립적인 치킨' , 'explain':'당신과 오늘 가장 잘어울리는 음식은 독립적인 치킨입니다! <br><br>혼자서 해결하려는 의지가 강한 당신은 본인의 관심분야 외에는 신경쓰지 않는군요! 고민이 있어도 표정에 잘 드러나지 않고 주변 사람들에게 굳이 나의 고민을 털어놓을 필요가 없어요, 누군가에게 고민 상담을 들어도 그게 그렇게 고민될 만한 일인가 싶은 쿨한 당신이에요. 상대방에게 무관심해 보일 수 있지만 나는 단지 고민이 없는 쿨한 사람일 뿐이에요. 자칫 무신경하다거나 매정하다고 느낄 수 있지만 좋아하는 분야는 몰입하며 모든 것을 객관적으로 판단하려 하고 꼼수를 쓰지 않는 당신의 매력이 보이네요. 연애에 있어서는 도대체 밀당을 왜 하는지 이해할 수 없어요. 나에게 밀당을 하면 자칫 나에게 관심이 없다고 오해하는 수가 있어요. 나는 돌려말하지 않고 좋아하면 좋아한다고 마음을 표현하고 싶어해요. 본인만의 확고하고 체계적인 기준으로 독립적인 삶을 추구하는 당신은 독립적인 치킨을 닮았어요! <br><br>독립적인 당신, 오늘은 치킨을 먹어보는 것이 어떤가요?','img' : "intj.png"},
+            'INTP' : {'animal': '솔직하고 열정적인 봉골레 파스타' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 솔직하고 열정적인 봉골레 파스타입니다. <br><br>생각하는 것을 좋아하는 당신! 호기심이 많아 가끔 쓸데없는 것에까지 집착적으로 고민하고 파고들지만 그게 바로 열정적이라는 증거죠. 가끔은 멍을 잘 때린다는 말을 듣곤 하는데 사실 당신은 무한 상상의 나래를 펼치고 있었다는 것! 멍한 매력과 호기심이 많은 성격 때문에 이성들에게 인기가 많은 스타일이군요. 돌려말하기는 딱 질색. 하고 싶은 말이 있으면 바로바로 돌직구를 날려요. 하지만 상대방에게 상처를 줄 의도는 전혀 없었어요. 단지 솔직하고 생각나는대로 말을 했을 뿐이에요. 이러한 성격으로 가끔 상대방이 오해하는 경우가 있을 수 있지만 나의 마음을 잘 이해해줬으면 해요. 하지만 당신의 매사에 매우 솔직한 매력에 푹 빠지는 경우도 있답니다. 혼자서 생각의 나래를 펼치고 탐구하는 걸 좋아하는 당신은 짭짤하고 담백한 봉골레 파스타를 닮았네요! <br><br>솔직하고 열정적인 당신, 오늘은 봉골레 파스타를 먹어보는 건 어떨까요?','img' : "intp.png"},
+            'INFJ' : {'animal': '따끈한 전복죽' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 따끈한 전복죽입니다.<br><br> 마음이 여리고 몽환적이지만 독립적인 당신! 관계에 대한 선이 뚜렷하고 낯을 가려 첫인상과 다르다는 말을 잘 듣는 편입니다. 낯을 가리고 독립적인 성격 때문에 겉으로는 무뚝뚝해 보일 수도 있지만 당신은 마음이 여린 겉바속촉이죠. 모든 사람에게 낯을 가릴 것 같다가도 막상 친해지고 나면 숨겨두었던 매력을 발산하는군요. 이러한 반전의 매력이 있어 당신과 한 번 친해지고 나면 헤어나올 수 없어요. 또한 내 사람에게 만큼은 누구보다도 잘 챙겨주는 따뜻한 마음씨의 소유자입니다. 또한 계획적인 것을 좋아하지만 즉흥적이고 충동적인 면도 있는 당신은 행동력은 살짝 부족해서 생각에서 그치는 경우가 많아 보이네요. 생각을 행동을 끝까지 밀어붙이는 성격의 동반자를 만난다면 환상을 케미를 보여줄 수 있겠어요. 무심한 듯 하다가도 주변 사람들이 도움을 필요로 할 때 나타나는 츤데레 같은 당신! 불의에는 분노하고 약자에게 약한 당신은 따끈한 전복죽을 닮았어요. <br><br>따스한 마음을 가진 당신, 오늘은 전복죽을 먹어보는 것이 어떨까요?','img' : "infj.png"},
+            'INFP' : {'animal': '온화한 어묵탕 ' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 온화한 어묵탕 입니다. <br><br>낯가림이 있고 속을 잘 비추지 않지만 누구보다 공감과 배려를 잘 해주죠. 누구보다 상대방을 생각하는 마음이 따뜻해 가끔은 상대방이 당신의 깊은 속마음을 이해해주지 못한다고 느껴 상처를 받을 때가 있군요. 이해심이 많고 관대하지만 자신만의 신념은 확고하게 가지고 있기 때문에 인간관계에 있어 선은 확실한 편입니다. 당신의 온화한 성격과 특이한 매력 덕분에 사람들에게 인기가 많은 편인데요, 성취욕에 비해 실행력은 낮지만 상상력이 풍부하며 섬세하고 감성적인 당신의 매력에 사람들은 천천히 빠진답니다. 하지만 당신의 따뜻한 마음을 무조건적으로 내어주고 양보만 하다 보면 상대에게 서운한 일이 생길 수 있으니 나를 잘 챙기도록 해요. <br><br>온화한 당신, 오늘은 어묵탕을 먹어보는 건 어떨까요?','img' : "infp.png"},
+            'ESTJ' : {'animal': '똑부러지는 초밥' , 'explain':'당신과 오늘 가장 잘어울리는 음식은 똑부러지는 초밥입니다!  <br><br>결단력이 뛰어나고 자신감이 넘치는 당신은 목표에 대한 의지가 굳은 사람이죠. 추진력이 있어서 약속을 잡을때 예약담당이 되곤 합니다. 공감 좀 해줘! 와 같은 말을 듣지는 않나요? 빈틈없는 당신의 현실적인 마인드로 다른 사람들을 공감하는 것이 조금 서툴때도 있지만 헌신적이며 책임감이 강한 당신에게 사람들은 의지하곤 합니다. 자신만의 기준과 계획을 가지고 단호하게 해내는 당신의 모습은 똑부러지는 초밥을 닮았군요.  <br><br> 똑부러지는 당신, 오늘은 초밥을 먹어보는 것이 어떤가요?','img' : "estj.png"},
+            'ESTP' : {'animal': '쿨한 냉면' , 'explain':'당신과 오늘 가장 잘어울리는 음식은 쿨한 냉면입니다.<br><br> 적극적이고 열정적인 당신, 항상 지금 현재 이 순간을 즐기고 삶을 즐기며 산답니다. 뿐만 아니라 현실적인 것에 몰두하는 것을 좋아하고 항상 합리성과 효율성을 추구하죠. 당신은 선입견이 별로 없어 관대하고 개방적인 마인드를 가지고 있습니다. 편견없이 누구에게나 너그러운 마음을 베푸는 당신에게서 따뜻한 면모가 보입니다. 당신은 주절주절 돌려말하기는 딱 질색이군요. 긴 설명은 싫어하며 쉽게 질리기도 하지만 위기상황에서 임기응변을 잘 발휘하는 당신이 강점이 빛을 발할 때가 많겠군요! 연애에 있어서는 금사빠 기질이 보이는 듯 해요. 그렇다고 금사식은 아니랍니다. 한 번 빠지면 불도저처럼 직진하는 화끈한 면이 있습니다. 선입견이 없어서 상대를 편안하게 해주면서 한편으로 스릴있는 모험을 즐기는 뒤끝없는 당신의 모습은 쿨한 냉면을 닮았어요.<br><br> 쿨한 당신, 오늘은 냉면을 먹어보는 것이 어떤가요?','img' : "estp.png"},
+            'ESFJ' : {'animal': '분위기 메이커 삼겹살' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 분위기 메이커 삼겹살입니다. <br><br>본투비 인싸인 당신은 타고난 분위기 메이커입니다. 이러한 나에게 집콕 생활은 끔찍하고 참을 수 없어요. 친구들과 만나 에너지를 발산하고 나서야 직성이 풀리는군요. 톡톡 튀는 비타민 같은 당신은 새로운 사람 사귀는 것도 좋아하고 노는 것도 정말 좋아합니다. 정이 많아 주변사람들을 잘 챙기지만 관심에 민감하고 쉽게 서운해지기도 하죠. 내가 주변 사람들에게 나누는 정만큼 괜히 나도 받기를 조금은 기대하게 돼요. 적극적이고 외향성 끝판왕인 당신도 연애에 있어서는 소심해질 때도 있는데요, 상대방이 나와 감정이 다를까봐 상대가 먼저 마음을 표현해주면 좋겠어요. 하지만 한 번 확신을 받으면 거침없이 직진한답니다. 밝은 표정으로 따뜻하고 섬세하게 분위기를 주도해 가는 당신은 파티의 꽃인 삼겹살과 닮았군요. <br><br>분위기 메이커인 당신, 오늘은 삼겹살을 먹어보는 것이 어떤가요?','img' : "esfj.png"},
+            'ESFP' : {'animal': '명랑한 떡볶이' , 'explain':' 당신과 오늘 가장 잘어울리는 음식은 명랑한 떡볶이입니다! <br><br>쾌활하고 붙임성이 좋은 당신은 어디서나 분위기 메이커를 자처합니다. 지시와 명령은 잘 따르고 싶지 않고 마감시간을 지키기가 어려울때도 있지만, 언제나 당신이 가진 여유는 강점이 되죠! 또, 순간의 흥분되는 감정이나 상황에 쉽게 빠져들면서, 주변사람들을 위로하고 용기를 북돋는데에 누구보다 많은 시간과 에너지를 소비하죠. 고민을 가진 이들에게 따뜻한 위로를 건네주곤 하죠. 당신의 그런 명랑하고 쾌활한 모습은 다른 사람들이 매력적으로 생각하는 부분이기도 합니다! 낙관적으로 생각하기에 새로운 시도에 거리낌이 없는 당신의 에너지가 부러워요. <br><br>명랑한 당신, 오늘은 떡볶이를 먹어보는 것이 어떤가요?  ','img' : "esfp.png"},
+            'ENTJ' : {'animal': '화끈한 짬뽕' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 화끈한 짬뽕입니다. <br><br>열정적인 리더가 너무나 잘 어울리는 당신! 직설적이고 솔직한 화법으로 카리스마를 가집니다. 당신의 진취적인 생각과 결정력, 그리고 냉철한 판단력으로 이루어진 카리스마는 주변사람들을 휘어잡아 당신을 따르게 하죠. 감정표현이 솔직하고 감정 공감은 조금 서툴수 있겠네요. 또, 도전을 좋아하고 호기심이 많기에 지루한건 놉! 변화를 추구하기도 하죠. 당신은 어려운 일을 만나면 오히려 자극을 받아 쉽게 처리하곤 하기도 하죠. 그래서인지 당신의 야망과 꿈은 누구보다 크죠. 승부욕도 많아 목표를 달성하기 위해 단계별로 체계적으로 계획을 짜고 빠르고 효율적인 방법으로 목표를 이뤄가는 뜨거운 승부사인 당신은 화끈한 짬뽕을 닮았군요. <br><br>화끈한당신, 오늘은 짬뽕을 먹어보는 것이 어떤가요?','img' : "entj.png"},
+            'ENTP' : {'animal': '얼얼한 마라탕' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 얼얼한 마라탕입니다. <br> <br>남들과 토론하고 이야기하는 것 자체에서 에너지를 얻는 당신은 언제나 매운맛! 누구에게도 지지 않는 자존심과 승부욕을 가졌죠. 토론에는 누구보다 열정적이고 자신의 주관을 뚜렷하게 드러내지만, 본인이 틀렸다는 것이 밝혀지면 깔끔하게 인정하는 쿨한 면모도 있어요. 다방면에 관심과 재능이 많은 당신은 박학다식하다고 표현할 수도 있겠네요! 무엇을 하든 간에 못해도 평균이상은 하는 편이랍니다. 다만 단기간에 시간 투자를 해서 끝내는 일은 효율과 성과가 좋은 반면 오랜 시간을 투자해야 성과를 낼 수 있는 분야는 조금 힘들어 하죠. 또한, 통찰력과 직관력이 뛰어나 다른 사람들이 놓치는 부분을 발견하여 창의적으로 해결책을 찾아 내곤 하는 편이죠.  핫한 언변으로 모두를 압도하는 얼얼한 당신은 마라탕을 닮았네요! <br> <br>얼얼한 당신, 오늘은 마라탕을 먹어보는 것이 어떤가요?','img' : "entp.png"},
+            'ENFP' : {'animal': '화려한 피자' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 화려한 피자입니다. <br> <br>하고 싶은 게 너무 많은 에너지 넘치는 당신! 사람을 좋아하고 잘 챙겨서 힘든 상황에 있는 사람을 지나치지 못하는 따뜻한 마음을 가졌군요. 그 예쁜 마음으로 사람들을 기쁘게 해주는 당신만의 매력은, 주변 사람들이 당신을 따르게 하는군요!  다소 충동적으로 일을 벌리는 편이지만 하고싶은 일에 대한 열정은 누구에게도 뒤지지 않아요! 그만큼 잘 질리기도 하지만요... 그래서인지 당신은 호불호가 분명하며 흥미있는 일에는 굉장히 열정적이지만 관심없는 일에는 수동적으로 임하는 편이기도 합니다. 겉보기에는 누구보다 밝고 경쾌해 보이는 당신은 생각이 많고 혼자만의 시간도 필요로 합니다. <br> <br>인생을 다채롭게 살아가는 당신은 다양한 재료가 조화를 이루는 피자를 닮았네요! 화려한 당신, 오늘은 피자를 먹어보는 것이 어떤가요?','img' : "enfp.png"},
+            'ENFJ' : {'animal': '포근한 연어덮밥' , 'explain':'당신과 오늘 가장 잘 어울리는 음식은 포근한 연어덮밥입니다.<br> <br>언제나 사람에 대한 정이 많아 남을 생각하고 예쁘게 말하는 스윗한 당신!  상대방을 실망시키지 않기 위해 신뢰감을 주고, 책임감이 강한 당신은 카리스마로 무리의 사람들을 휘어잡아 종종 리더를 맡습니다. 세상을 선하게 바꾸고 싶어하고 옳고 정의롭게 살아가는 것에 가치를 두며 주변 사람들을 독려하기도 합니다. 연애에 있어서는 한 사람만 바라보는 타고난 사랑꾼이에요. 하지만 상대방이 나와 마음이 같지 않을 때 누구보다 실망감이 커요.정, 눈물, 동정심이 정말 많아 사람들을 신경쓰고 잘해주려 합니다. 가끔은 상대방의 말이나 비판에  민감하게 반응하며 쉽게 상처 받을수 있을 수도 있을 것 같아요.  그럼에도 사람들을 정말 좋아해서 항상 남들을 생각하는 당신은  사랑받는 걸 좋아하는 연어덮밥을 닮았네요! <br> <br>포근한 당신, 오늘은 연어덮밥을 먹어보는 것이 어떤가요?','img' : "enfj.png"},
         }
         var chance = 0;
-        function classput(){
-            if(chance === 0 ){
-                $('#txt2').addClass('animate__animated');
-                $('#txt2').addClass('animate__fadeInDown');
-                $('#txt2').attr('style','display:flex');
-                chance++;
-              
-            }else{
-                $('#txt3').addClass('animate__animated');
-                $('#txt3').addClass('animate__fadeInDown');
-                $('#txt3').attr('style','display:flex');
-                $('#page').hide();
-                $('#start2').show();
+        function return_main(){
+            $('.intro4_1').hide();
+            $('.intro2').show();
+        }
+        function start_func(){
+            if(chance ===0){
+                $('.start').hide();
+                $('.intro1').show();
+                $('.intro1').attr("style","display:flex");
+            }else if(chance ===1){
+                $('.start').hide();
+                $('.question').show();
+                $('.question').attr("style","display:flex");
+                next();
             }
             
         }
-        function move() {
-           $('.intro').hide();
-           $('.question').show();
-           $('.question').attr("style","display:flex");
-           next();
+
+        function bgm(){
+            var audio = document.getElementById('audio_play'); 
+            var bgmbtn = document.getElementById('bgm');
+            if (audio.paused) {
+                bgmbtn.innerHTML = 'bgm ON'; 
+                bgmbtn.style.background = 'white';
+                bgmbtn.style.color = 'black';
+                audio.play(); 
+            }else{ 
+                bgmbtn.innerHTML = 'bgm OFF'; 
+                bgmbtn.style.background = 'black';
+                bgmbtn.style.color = 'white';
+                audio.pause(); 
+                audio.currentTime = 0 
+            } 
         }
+
+        function intro1(){
+            if($('#vd1')[0].currentTime === $('#vd1')[0].duration ){
+                $('#vd1').attr("style","cursor:pointer");
+                $('.intro1').hide();
+                $('.intro2').show();
+                $('.intro2').attr("style","display:flex");
+            }
+        }
+        function intro2(){
+
+            $('.intro2').hide();
+            $('.intro1_1').show();
+            $('.intro1_1').attr("style","display:flex");
+        }
+        function intro1_1(){
+            if($('#vd2')[0].currentTime === $('#vd2')[0].duration ){
+                $('#vd2').attr("style","cursor:pointer");
+            $('.intro1_1').hide();
+            $('.intro2_1').show();
+            $('.intro2_1').attr("style","display:flex");
+            }
+        }
+        function intro2_1(){
+            $('.intro2_1').hide();
+            $('.intro4').show();
+            $('.intro4').attr("style","display:flex");
+        }
+        function intro3_1(){
+            $('.intro4').hide();
+            $('.intro4_1').show();
+            $('.intro4_1').attr("style","display:flex");
+        }
+        function intro3(){
+            $('.intro4').hide();
+            $('.intro5').show();
+            $('.intro5').attr("style","display:flex");
+        }
+        function intro4(){
+            if($('#vd3')[0].currentTime === $('#vd3')[0].duration ){
+                $('#vd3').attr("style","cursor:pointer");
+            $('.intro5').hide();
+            $('.intro6_1').show();
+            $('.intro6_1').attr("style","display:flex");
+            }
+        }
+        function intro5_1(){
+            $('.intro6_1').hide();
+            $('.intro6').show();
+            $('.intro6').attr("style","display:flex");
+        }
+        function intro5(){
+            $('.intro6').hide();
+            $('.intro7').show();
+            $('.intro7').attr("style","display:flex");
+        }
+        function intro6(){
+            $('.intro7').hide();
+            $('.intro8').show();
+            $('.intro8').attr("style","display:flex");
+        }
+        function intro7(){
+            $('.intro8').hide();
+            $('.intro9').show();
+            $('.intro9').attr("style","display:flex");
+        }
+        function intro8(){
+            if($('#vd4')[0].currentTime === $('#vd4')[0].duration ){
+                $('#vd4').attr("style","cursor:pointer");
+            $('.intro9').hide();
+            $('.intro10').show();
+            $('.intro10').attr("style","display:flex");
+            }
+        }
+        function intro9(){
+            $('.intro10').hide();
+            $('.intro10_1').show();
+            $('.intro10_1').attr("style","display:flex");
+           
+        }
+        function intro9_1(){
+            
+            $('.intro10_1').hide();
+            $('.intro10_2').show();
+            $('.intro10_2').attr("style","display:flex");
+           
+        }
+        function intro9_2(){
+            
+            $('.intro10_2').hide();
+            $('.intro10_3').show();
+            $('.intro10_3').attr("style","display:flex");
+           
+        }
+        function intro9_3(){
+            
+            $('.intro10_3').hide();
+            $('.intro9_1').show();
+            $('.intro9_1').attr("style","display:flex");
+           
+        }
+        function intro8_1(){
+            if($('#vd5')[0].currentTime === $('#vd5')[0].duration ){
+                chance ++;
+                $('.intro9_1').hide();
+                $('#vd5').attr("style","cursor:pointer");
+                $('.start').addClass('puff-in-center');
+                $('.start').show();
+            }
+        }
+        
         $('#A').click(function(){
             var type = $('#type').val();
             var preValue = $('#'+type).val();
@@ -171,6 +455,7 @@
         $('#B').click(function(){
             next();
         })
+
         function next() {
             if(num==13){
                 $(".question").hide();
@@ -184,9 +469,9 @@
                 $('#img').attr('src',result[mbti]['img']);
                 $('#animal').html(result[mbti]['animal']);
                 $('#explain').html(result[mbti]['explain']);
-              
+            }
 
-            } else{
+            else{
                 $('.progress-bar').attr('style',"width:calc(100/12*"+ num +"%)" )
                 $('#title').html(q[num]["title"]);
                 $('#question-box').html(q[num]['question']);
@@ -197,11 +482,7 @@
             }
            
         }
-       
-    
-
     </script>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60fcfc79f7931174"></script>
 
 </body>
