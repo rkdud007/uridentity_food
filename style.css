@@ -47,6 +47,9 @@ html,body{
     max-height: 70%;
 
 }
+.intro4{
+    align-items: unset;
+}
 
 .intro4 > div > div{
     display: flex;
